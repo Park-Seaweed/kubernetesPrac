@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod #종류
+metadata: #pod 이름, pod 라벨
+  name: mariadb
+  labels:
+    app: mariadb
+spec: # pod 안에서 실행할 컨테이너 이름, 이미지, 환경변수
+  containers:
+    - name: mariadb
+      image: mariadb:10.7
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "123456"
